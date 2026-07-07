@@ -132,3 +132,19 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    📈 Example Execution Output
+When you execute the script running python text_summarizer.py, your terminal console will print out the original input array compared to the concise, generated sentence weights:
+Plaintext
+[INFO] Initializing Transformer pipeline using: facebook/bart-large-cnn...
+[INFO] Model and weights successfully cached and loaded.
+
+======================================== ORIGINAL ARTICLE ========================================
+Artificial intelligence (AI), in its broadest sense, is intelligence exhibited by machines, particularly computer systems. It is a field of research in computer science that develops and studies methods and software which enable machines to perceive their environment and use learning and intelligence to take actions that maximize their chances of achieving defined goals. Such machines may be called AIs. AI technology is widely used throughout industry, government, and science. Some high-profile applications include advanced web search engines (e.g., Google Search); recommendation systems (used by YouTube, Amazon, and Netflix); interacting via human speech (such as Google Assistant, Siri, and Alexa); autonomous vehicles (e.g., Waymo); generative and creative tools (ChatGPT and AI art); and automated decision-making. Many AI applications are not perceived as AI: 'A lot of cutting-edge AI has filtered into general applications, often without being called AI because once something becomes useful enough and common enough it's not labeled AI anymore,' known as the AI effect. Alan Turing was the first person to conduct substantial research in the field that he called machine intelligence. AI research was founded as an academic discipline in 1956. The field went through multiple cycles of optimism, followed by disappointment and loss of funding (known as an 'AI winter'), followed by new approaches, success, and renewed funding.
+==================================================================================================
+
+[INFO] Processing abstractive summarization. Please wait...
+======================================== GENERATED SUMMARY ========================================
+Artificial intelligence (AI) is intelligence exhibited by machines, particularly computer systems. AI technology is widely used throughout industry, government, and science. High-profile applications include advanced web search engines, recommendation systems, and autonomous vehicles. AI research was founded as an academic discipline in 1956.
+==================================================================================================
+============================================XXXXXXXXXX============================================
