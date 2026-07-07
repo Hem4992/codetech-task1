@@ -1,0 +1,51 @@
+import re
+from collections import Counter
+
+def summarize_text(text, num_sentences=2):
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+
+    stop_words = {
+        'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to',
+        'for', 'of', 'with', 'is', 'are', 'was', 'were', 'be', 'been',
+        'being', 'this', 'that', 'these', 'those', 'it', 'its', 'as',
+        'by', 'from', 'about', 'into', 'than', 'then'
+    }
+
+    words = re.findall(r'\w+', text.lower())
+    words = [word for word in words if word not in stop_words]
+    word_freq = Counter(words)
+
+    sentence_scores = {}
+
+    for sentence in sentences:
+        sentence_words = re.findall(r'\w+', sentence.lower())
+        score = sum(word_freq.get(word, 0) for word in sentence_words)
+        sentence_scores[sentence] = score
+
+    summary = sorted(
+        sentence_scores,
+        key=sentence_scores.get,
+        reverse=True
+    )[:num_sentences]
+
+    return " ".join(summary)
+
+article = """
+The Mahabharata is one of the two major ancient Sanskrit epics of Hinduism 
+(along with the Ramayana). At roughly 100,000 verses, it is the longest epic poem ever written. 
+It details the monumental struggle for the throne of Hastinapura between two branches of the Kuru dynasty: 
+the Pandavas and the Kauravas.The epic centers on the Kurukshetra War, an eighteen-day apocalyptic battle that 
+decimates entire kingdoms but ultimately results in the triumph of righteousness (dharma). Interwoven within 
+the main storyline of succession, exile, and war are countless fables, mythological tales, and philosophical
+discourses. The most famous of these is the Bhagavad Gita, a pivotal dialogue between the 
+Pandava archer Arjuna and his guide Lord Krishna,which addresses complex themes of duty,ethics,and devotion.
+Traditionally attributed to the sage Vyasa, the Mahabharata remains one of the most influential texts 
+in world literature, celebrated not just as an action-packed tale of royalty and warfare, but as a profound,
+timeless guide to morality, human psychology, and the righteous way to live.
+"""
+
+print("\n===== ORIGINAL TEXT =====\n")
+print(article)
+
+print("\n===== SUMMARY =====\n")
+print(summarize_text(article, 2))
