@@ -1,3 +1,9 @@
+Text Summarization Tool
+
+This project showcases the guide on how text summarization works using the Hugging Face transformers library, specifically leveraging powerful pre-trained models like BART or T5.
+
+INTERNSHIP INFORMATION
+
 Company: CODTECH IT SOLUTIONS PVT. LTD
 Name: Moode Hemanth Naik
 Intern ID: CITS1163
