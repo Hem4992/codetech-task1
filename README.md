@@ -5,29 +5,42 @@ This project showcases the guide on how text summarization works using the Huggi
 INTERNSHIP INFORMATION
 
 Company: CODTECH IT SOLUTIONS PVT. LTD
+
 Name: Moode Hemanth Naik
+
 Intern ID: CITS1163
+
 Domain: Artificial Intelligence
+
 Duration: 8 Weeks
+
 Internship Period: 17 May 2026 - 12 July 2026
+
 Mentor: Neela Santhosh Kumar
 
+
 📝 Task 1: Text Summarization Tool
+
 This repository features an automated Text Summarization Tool built using modern Natural Language Processing (NLP) techniques. It leverages the state-of-the-art BART (Bidirectional and Auto-Regressive Transformers) architecture via the Hugging Face transformers library to compress lengthy text articles into concise, coherent summaries while preserving core semantic meaning.
+
 📋 Project Overview
+
 Manual summaries of lengthy research papers, financial reports, or news articles are time-consuming. This tool automates the distillation process using a pre-trained sequence-to-sequence model (facebook/bart-large-cnn), which is fine-tuned specifically for text summarization tasks.
 Core Pipeline
 Model Loading: Dynamically initializes the pre-trained tokenizers and model weights.
 Text Chunking / Truncation: Gracefully handles long text constraints using dynamic parameter inputs.
 Abstractive Inference: The model generates brand-new sentence structures to summarize the text natively rather than just pulling raw sentences out (extractive approach).
 Execution Comparison: Cleans and outputs the original vs. summary text for analytical review.
+
 🚀Setup & Installation
+
 1. System Requirements
 Python 3.8 or higher
 Recommended: PyTorch (CPU version is sufficient for running small test iterations, but a CUDA-enabled GPU dramatically speeds up generation).
 2. Dependency Installation
 Create a virtual environment and install the required modules.
 Bash
+
 # Clone or create your directory
 mkdir text-summarizer && cd text-summarizer
 
@@ -43,10 +56,13 @@ transformers>=4.30.0
 torch>=2.0.0
 sentencepiece>=0.1.99
 And run: pip install -r requirements.txt
+
 💻 Implementation Source Code
+
 Save the following code block as text_summarizer.py. It is built with safety thresholds, explicit type hinting, and clear text blocks.
 Python
 """
+
 Text Summarization Tool using Hugging Face Transformers.
 Author: [Your Name / Intern ID]
 Domain: Machine Learning / NLP
